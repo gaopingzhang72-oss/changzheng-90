@@ -374,6 +374,74 @@
     font-size:13px;line-height:1.8;color:#5b4f48}
   .qpCard .qpClose{position:absolute;right:8px;top:6px;border:0;background:none;font-size:22px;
     line-height:1;color:#b09a80;cursor:pointer;padding:6px 10px}
+
+  /* --------- 抉择 / 档案 --------- */
+  nav button{padding:9px 8px;font-size:13px}
+  .cIntro{background:#fffdf7;border:1px solid #e9dcc6;border-radius:10px;padding:14px 16px;margin-bottom:14px;
+    font-size:13.5px;line-height:1.75;color:#5b4f48}
+  .cBar{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:12px;color:#8a7a68}
+  .cBar i{font-style:normal;flex:1;height:4px;background:#eadfc9;border-radius:2px;overflow:hidden;display:block}
+  .cBar i b{display:block;height:100%;width:0;background:linear-gradient(90deg,#b23a24,#c9a227);transition:width .3s}
+  .cCard{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 16px 14px;margin-bottom:14px}
+  .cWhen{font-size:11.5px;color:#a2896a;letter-spacing:.6px;margin-bottom:6px}
+  .cTitle{font-size:16.5px;color:var(--red-deep);font-family:"Songti SC","SimSun",Georgia,serif;margin-bottom:8px}
+  .cSit{font-size:13.5px;line-height:1.85;color:#4a3f38;margin:0 0 14px}
+  .cOpts{display:grid;gap:9px}
+  .cOpt{text-align:left;font-family:inherit;font-size:13.5px;line-height:1.6;padding:11px 13px;
+    background:#fdf8ee;border:1px solid #e6d8bf;border-radius:8px;color:#4a3f38;cursor:pointer;
+    transition:border-color .18s,background .18s}
+  .cOpt:hover{border-color:#c9a227}
+  .cOpt:disabled{cursor:default}
+  .cOpt.was{background:#f6efe0;border-color:#c9a227;color:#6b5b4d}
+  .cOpt.you{outline:1.5px solid #b23a24;outline-offset:-1px}
+  .cOpt .tag{font-size:11px;color:#b23a24;margin-left:6px}
+  .cRes{display:none;margin-top:14px;padding-top:13px;border-top:1px dashed #e2d3b7;font-size:13.5px;line-height:1.85;color:#4a3f38}
+  .cRes.on{display:block}
+  .cRes b{color:var(--red-deep)}
+  .cSrc{display:block;margin-top:8px;font-size:11px;color:#a2896a;line-height:1.6}
+  .cNext{margin-top:12px;font-family:inherit;font-size:13.5px;padding:9px 18px;border-radius:20px;border:0;
+    background:linear-gradient(135deg,#a3241c,#7d1a15);color:#f7e7cf;cursor:pointer}
+  .cSum{background:linear-gradient(155deg,#7d1a15,#4d0f0b);color:#f7e7cf;border-radius:10px;padding:22px 18px;
+    text-align:center;margin-bottom:14px}
+  .cSum b{display:block;font-size:19px;letter-spacing:1px;margin-bottom:8px}
+  .cSum p{margin:0;font-size:13px;line-height:1.8;color:#e7cfae}
+  .cSum .sc{font-size:30px;font-family:"Songti SC","SimSun",Georgia,serif;letter-spacing:2px;margin:6px 0 10px}
+  .subNav{display:flex;gap:8px;margin-bottom:14px}
+  .subNav button{flex:1;font-family:inherit;font-size:13px;padding:9px 4px;border-radius:8px;cursor:pointer;
+    background:#fdf8ee;border:1px solid #e6d8bf;color:#6b5b4d}
+  .subNav button.on{background:#8B1A1A;border-color:#8B1A1A;color:#f7e7cf}
+  .archPanel{display:none}
+  .archPanel.on{display:block}
+  /* 时间轴 */
+  .tl{position:relative;padding-left:20px}
+  .tl:before{content:"";position:absolute;left:5px;top:4px;bottom:4px;width:1px;background:#e0d0b2}
+  .tlRow{position:relative;margin-bottom:13px}
+  .tlRow:before{content:"";position:absolute;left:-18px;top:6px;width:7px;height:7px;border-radius:50%;
+    background:#c9a227;box-shadow:0 0 0 2px #fff}
+  .tlRow.big:before{background:#b23a24;width:9px;height:9px;left:-19px}
+  .tlD{font-size:11.5px;color:#a2896a;letter-spacing:.5px}
+  .tlT{font-size:13.5px;line-height:1.7;color:#4a3f38;margin-top:2px}
+  .tlGo{display:inline-block;margin-top:3px;font-size:11px;color:#8B1A1A;border-bottom:1px dotted #c9a227;cursor:pointer}
+  /* 数据 */
+  .chartBox{background:#fffdf7;border:1px solid #e9dcc6;border-radius:10px;padding:12px 10px 8px;margin-bottom:14px}
+  .chartBox h3{margin:0 0 4px 6px;font-size:14px;color:var(--red-deep);font-weight:600}
+  .chartBox p{margin:0 0 6px 6px;font-size:11.5px;color:#8a7a68;line-height:1.6}
+  .chartBox canvas{display:block;width:100%;height:auto}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 2px 6px;font-size:11.5px;color:#6b5b4d}
+  .legend span{display:flex;align-items:center;gap:5px}
+  .legend i{width:14px;height:3px;border-radius:2px;display:block}
+  /* 人物 */
+  .pFilters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+  .pFilters button{font-family:inherit;font-size:12px;padding:6px 12px;border-radius:16px;cursor:pointer;
+    background:#fdf8ee;border:1px solid #e6d8bf;color:#6b5b4d}
+  .pFilters button.on{background:#8B1A1A;border-color:#8B1A1A;color:#f7e7cf}
+  .pGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  @media(min-width:620px){.pGrid{grid-template-columns:repeat(3,1fr)}}
+  .pCard{background:#fffdf8;border:1px solid #e9dcc6;border-radius:8px;padding:10px 11px}
+  .pCard b{display:block;font-size:13.5px;color:#8B1A1A;letter-spacing:.5px}
+  .pCard .age{font-size:11px;color:#b23a24;margin-left:4px;font-weight:400}
+  .pCard p{margin:4px 0 0;font-size:11.5px;line-height:1.65;color:#6b5b4d}
+  .pCard .fate{margin-top:4px;font-size:11px;color:#a2896a;border-top:1px dashed #eadfc9;padding-top:4px}
   footer{text-align:center;font-size:11.5px;color:#9c8e84;padding:16px 10px}
   @media(min-width:760px){ header h1{font-size:20px} #dateLbl{min-width:110px} }
 </style>
@@ -608,9 +676,11 @@ window.addEventListener("load", function(){
 </header>
 
 <nav>
-  <button class="on" data-tab="mapTab">行军地图</button>
-  <button data-tab="quizTab">知识问答</button>
-  <button data-tab="spiritTab">长征精神</button>
+  <button class="on" data-tab="mapTab">地图</button>
+  <button data-tab="quizTab">问答</button>
+  <button data-tab="choiceTab">抉择</button>
+  <button data-tab="archTab">档案</button>
+  <button data-tab="spiritTab">精神</button>
 </nav>
 
 <!-- ================= 地图 ================= -->
@@ -727,6 +797,61 @@ window.addEventListener("load", function(){
 </section>
 
 <!-- ================= 精神 ================= -->
+<section id="choiceTab">
+  <main class="inner">
+    <div class="cIntro">
+      下面六个关口，都是当时真的必须马上做决定的地方。你选一个，程序告诉你当时实际怎么走、结果如何。
+      选对选错都不影响成绩，走完之后你会发现，很多「唯一正确」的选择，在当时并不明显。
+    </div>
+    <div class="cBar"><span id="cStep">第 1 关 / 共 6 关</span><i><b id="cProg"></b></i><span id="cHit">与史实一致 0</span></div>
+    <div id="cBody"></div>
+  </main>
+</section>
+
+<section id="archTab">
+  <main class="inner">
+    <div class="subNav">
+      <button class="on" data-sub="tlPanel">时间轴</button>
+      <button data-sub="dataPanel">数据</button>
+      <button data-sub="peoplePanel">人物</button>
+    </div>
+    <div class="archPanel on" id="tlPanel">
+      <div class="tl" id="tlList"></div>
+    </div>
+    <div class="archPanel" id="dataPanel">
+      <div class="chartBox">
+        <h3>中央红军兵力变化</h3>
+        <p>出发 8.6 万余人，湘江一战折损过半，到陕北时七千余人。数字据中央党史和文献研究院相关研究。</p>
+        <canvas id="chForce" width="640" height="300"></canvas>
+      </div>
+      <div class="chartBox">
+        <h3>四支队伍的长征路线</h3>
+        <p>中央红军 1934 年 10 月从于都出发；红二十五军 1934 年 11 月从河南罗山何家冲出发；红四方面军 1935 年 3 月西渡嘉陵江；红二方面军 1935 年 11 月从湖南桑植出发。</p>
+        <canvas id="chRoutes" width="640" height="480"></canvas>
+        <div class="legend">
+          <span><i style="background:#a3241c"></i>中央红军</span>
+          <span><i style="background:#c9822e"></i>红二十五军</span>
+          <span><i style="background:#3f6b8a"></i>红四方面军</span>
+          <span><i style="background:#5f7d3a"></i>红二方面军</span>
+        </div>
+      </div>
+    </div>
+    <div class="archPanel" id="peoplePanel">
+      <div class="pFilters" id="pFilters">
+        <button class="on" data-f="all">全部</button>
+        <button data-f="old">四十岁以上</button>
+        <button data-f="young">二十五岁以下</button>
+        <button data-f="fell">牺牲或早逝</button>
+        <button data-f="rank">后来授衔</button>
+      </div>
+      <div class="pGrid" id="pGrid"></div>
+      <p style="font-size:11.5px;color:#8a7a68;margin-top:12px;line-height:1.7">
+        年龄按 1934 年 10 月中央红军出发时计算，个别同志当时在其他部队，年龄取同月。
+      </p>
+    </div>
+  </main>
+</section>
+
 <section id="spiritTab">
   <main class="inner">
     <div class="spLead">
@@ -832,7 +957,11 @@ window.addEventListener("load", function(){
       1. 行军地图：十九个节点，从 1934 年 10 月于都出发到 1936 年 10 月会宁、将台堡会师；
       其中八处（通道转兵、遵义会议、四渡赤水、巧渡金沙江、强渡大渡河、飞夺泸定桥、过草地、会师）配了分段长文。<br>
       2. 知识问答：题库五十题，每轮随机抽十五题，答完按正确率给称号，每题答完有解析和史料出处。<br>
-      3. 长征精神：精神内涵五条、五个关键事件、用数字看长征、可点开的语录卡片。<br><br>
+      3. 抉择六关：湘西口袋、黎平决议、土城撤不撤、大渡河只有几条船、北上还是南下、腊子口之后去哪里。
+      每关给出当时的处境，选完告诉你当年实际怎么走、结果如何、史料出处。<br>
+      4. 档案：战役时间轴（1934.10—1936.10，可点击跳到地图对应节点）、数据页（中央红军兵力变化曲线、
+      四支队伍长征路线对比）、人物志（二十位长征亲历者，可按年龄、结局、是否授衔筛选）。<br>
+      5. 长征精神：精神内涵五条、五个关键事件、用数字看长征、可点开的语录卡片。<br><br>
 
       <b>二、地图与数据</b><br>
       省界取自阿里云 DataV 公开标准 GeoJSON（含南海诸岛），地势底图由公开 DEM 高程数据晕渲生成，
@@ -2185,6 +2314,319 @@ function closeQuote(){
   m.classList.remove("show");
   m.setAttribute("aria-hidden", "true");
 }
+
+
+/* ============================================================
+   六、抉择
+   ============================================================ */
+const CHOICES = [
+  { when:"1934 年 12 月 12 日 · 湖南通道",
+    title:"湘西的口袋，钻不钻",
+    sit:"湘江打完，中央红军只剩三万出头。原定计划是继续北上湘西，与红二、红六军团会合。可情报显示，国民党军已经在湘西张好了口袋，等着红军自己走进去。此时前面是重兵，后面是追兵。",
+    opts:["按原定计划继续北上湘西，与红二、红六军团会合","改向敌人力量薄弱的贵州前进"],
+    actual:1,
+    res:"会议接受了毛泽东的建议，放弃北上湘西的计划，改向贵州进军。这就是「通道转兵」。红军由此避开湘西的口袋阵，也为后来的黎平会议、遵义会议开了头。",
+    src:"中央党史和文献研究院网站；人民网党史频道" },
+
+  { when:"1934 年 12 月 18 日 · 贵州黎平",
+    title:"要不要写进决议",
+    sit:"通道只是临时改道，原定计划还没有正式作废。部队里仍有人主张掉头去湘西。政治局在黎平开会，争论的焦点是：这个改道要不要白纸黑字定下来。",
+    opts:["维持原计划，仍以会合红二、红六军团为目标","正式通过决议，放弃原计划，改向遵义进军"],
+    actual:1,
+    res:"黎平会议以政治局决议的形式，正式放弃到湘西北同红二、红六军团会合的原定计划，决定向贵州腹地进军。这一步把「临时改道」变成了「新的方向」。",
+    src:"新华网《百个瞬间说百年：1935，生死攸关的转折》" },
+
+  { when:"1935 年 1 月 28 日 · 贵州土城",
+    title:"打得下去吗",
+    sit:"红军在土城与川军郭勋祺部遭遇，原以为对方只有几个团，打起来才发现兵力远超预估，后续川军还在源源不断赶来。原定从泸州、宜宾之间北渡长江的计划已经行不通，而敌人正在合围。",
+    opts:["加码投入，硬打下去，按原计划北渡长江","撤出战斗，西渡赤水河，另寻机会"],
+    actual:1,
+    res:"当晚政治局和中革军委开会，接受毛泽东的意见：撤出战斗，轻装西渡赤水河，向川南古蔺、叙永前进。1 月 29 日红军分三路渡过赤水河，这就是一渡赤水，四渡赤水由此开始。",
+    src:"中央党史和文献研究院《毛泽东在四渡赤水战役指挥中的关键作用》" },
+
+  { when:"1935 年 5 月 · 四川安顺场",
+    title:"只有几条船",
+    sit:"红军赶到安顺场，只找到几条小船，全军靠这些船渡河要一个月，而追兵三天就能赶到。一百多年前，石达开的太平军就是在这种情形下全军覆没的。",
+    opts:["集中所有船只，日夜不停摆渡，慢慢把队伍送过去","分出一支部队沿江急行军，抢占上游的泸定桥"],
+    actual:1,
+    res:"十七勇士先在安顺场强渡成功，但船只太少，不足以让全军过河。红四团一昼夜急行军 240 里赶到泸定桥，二十二名突击队员攀着铁索夺下桥头，全军得以渡过大渡河。",
+    src:"国防部网；新华网" },
+
+  { when:"1935 年 6 月 26 日 · 四川两河口",
+    title:"往北还是往南",
+    sit:"红一、红四方面军在懋功会师，队伍壮大了，方向却有了分歧。北面是川陕甘，离抗日前线近，但人少地贫；南面是川康，人口多一些，但敌人力量集中。政治局开会定夺。",
+    opts:["北上，在川陕甘建立根据地","南下，在川康一带发展"],
+    actual:0,
+    res:"两河口会议确定北上建立川陕甘革命根据地的方针。张国焘主张南下，此后与中央反复争执，甚至另立中央；南下部队在川康损耗很大，后来不得不再次北上。",
+    src:"中央党史和文献研究院网站" },
+
+  { when:"1935 年 9 月 · 甘肃哈达铺",
+    title:"下一步去哪",
+    sit:"突破腊子口后，红军进入甘南。此时队伍只剩八千人左右，与陕北红军没有联系，也不知道那边还有没有根据地。下一步往哪里走，谁也说不准。",
+    opts:["就地扎根，在甘南一带打游击","继续北上，到陕北去"],
+    actual:1,
+    res:"部队在哈达铺从当地找到的报纸上得知：陕北有刘志丹领导的红军和一大片根据地。中央随即决定到陕北去，把长征的落脚点定在陕北，随后到达吴起镇。",
+    src:"中央党史和文献研究院网站；新华网" }
+];
+
+let cIdx = 0, cHits = 0, cLocked = false;
+
+function renderChoice(){
+  const box = document.getElementById("cBody");
+  const step = document.getElementById("cStep");
+  const prog = document.getElementById("cProg");
+  const hit  = document.getElementById("cHit");
+  if (!box) return;
+  if (cIdx >= CHOICES.length) {
+    const n = cHits;
+    const rank = n >= 6 ? "和当年的判断一样" : n >= 4 ? "大方向没走错" : n >= 2 ? "错得不算冤" : "换你指挥，队伍危险了";
+    box.innerHTML = '<div class="cSum"><b>' + rank + '</b><div class="sc">' + n + ' / 6</div>'
+      + '<p>六个关口里，你的选择和当年一致的有 ' + n + ' 个。<br>回头看都是常识，放在当时都是赌注。</p></div>'
+      + '<button class="cNext" onclick="restartChoice()">再走一遍</button>';
+    step.textContent = "已完成";
+    prog.style.width = "100%";
+    hit.textContent = "与史实一致 " + n;
+    return;
+  }
+  const c = CHOICES[cIdx];
+  step.textContent = "第 " + (cIdx+1) + " 关 / 共 " + CHOICES.length + " 关";
+  prog.style.width = ((cIdx/CHOICES.length)*100).toFixed(1) + "%";
+  hit.textContent = "与史实一致 " + cHits;
+  box.innerHTML = '<div class="cCard"><div class="cWhen">' + c.when + '</div>'
+    + '<div class="cTitle">' + c.title + '</div>'
+    + '<p class="cSit">' + c.sit + '</p>'
+    + '<div class="cOpts">' + c.opts.map((o,i) => '<button class="cOpt" data-i="' + i + '">' + o + '</button>').join("") + '</div>'
+    + '<div class="cRes" id="cRes"></div></div>';
+  cLocked = false;
+  box.querySelectorAll(".cOpt").forEach(b => b.onclick = () => pickChoice(+b.dataset.i));
+}
+
+function pickChoice(i){
+  if (cLocked) return;
+  cLocked = true;
+  const c = CHOICES[cIdx];
+  const box = document.getElementById("cBody");
+  const ok = i === c.actual;
+  if (ok) cHits++;
+  box.querySelectorAll(".cOpt").forEach((b, k) => {
+    b.disabled = true;
+    if (k === c.actual) { b.classList.add("was"); if (k === i) b.classList.add("you"); }
+    if (k === i && !ok) b.classList.add("you");
+  });
+  const res = document.getElementById("cRes");
+  res.innerHTML = (ok ? "<b>你和当年想的是一样的。</b> " : "<b>当年走的是另一条路。</b> ")
+    + c.res + '<span class="cSrc">史料：' + c.src + '</span>'
+    + '<button class="cNext" id="cNextBtn">' + (cIdx === CHOICES.length-1 ? "看结果" : "下一关") + '</button>';
+  res.classList.add("on");
+  document.getElementById("cNextBtn").onclick = () => { cIdx++; renderChoice(); };
+  document.getElementById("cHit").textContent = "与史实一致 " + cHits;
+}
+
+function restartChoice(){ cIdx = 0; cHits = 0; renderChoice(); }
+
+/* ============================================================
+   七、档案：时间轴 / 数据 / 人物
+   ============================================================ */
+const TIMELINE = [
+  ["1934.10", "中央红军八万六千余人从江西于都出发，开始战略转移", "于都出发", 1],
+  ["1934.11", "连破三道封锁线，进至湘南；蒋介石调集 16 个师专事追剿", "", 0],
+  ["1934.12.01", "湘江战役结束，红军由 8.6 万锐减至 3 万余，突破第四道封锁线", "血战湘江", 1],
+  ["1934.12.12", "通道会议，接受毛泽东建议，改向贵州进军", "通道转兵", 1],
+  ["1934.12.18", "黎平会议，正式放弃北上湘西的原定计划", "黎平会议", 0],
+  ["1935.01.06", "红军突破乌江天险，1 月 7 日攻占遵义", "强渡乌江", 1],
+  ["1935.01.15", "遵义会议召开，连开三天，改组中央领导机构", "遵义会议", 1],
+  ["1935.01.29", "土城战斗后西渡赤水河，一渡赤水", "土城战斗", 1],
+  ["1935.02.26", "二渡赤水后攻占娄山关，重占遵义，歼敌两个师又八个团", "娄山关大捷", 1],
+  ["1935.03.16", "三渡赤水，由茅台镇附近再入川南，佯装北渡长江", "茅台镇", 0],
+  ["1935.03.21", "四渡赤水，南渡乌江，佯攻贵阳，把几十万敌军甩在乌江以北", "四渡赤水", 1],
+  ["1935.05.03", "巧渡金沙江，七只木船九天九夜，全军渡过金沙江", "巧渡金沙江", 1],
+  ["1935.05.22", "刘伯承与彝族果基家支首领小叶丹在彝海歃血为盟", "", 0],
+  ["1935.05.25", "十七勇士在安顺场强渡大渡河", "强渡大渡河", 1],
+  ["1935.05.29", "二十二名突击队员夺取泸定桥，全军渡过大渡河", "飞夺泸定桥", 1],
+  ["1935.06.12", "翻越长征中第一座大雪山夹金山，随后与红四方面军在懋功会师", "翻越夹金山", 1],
+  ["1935.06.26", "两河口会议，确定北上建立川陕甘根据地", "", 0],
+  ["1935.08.21", "红军开始穿越松潘草地，随后进行包座战斗", "过松潘草地", 1],
+  ["1935.09.12", "俄界会议，决定将北上部队改编为陕甘支队", "", 0],
+  ["1935.09.17", "突破腊子口天险，打开北上甘南的通道", "突破腊子口", 1],
+  ["1935.10.19", "中央红军到达陕北吴起镇，行程二万五千里", "到达吴起镇", 1],
+  ["1935.11.21", "直罗镇战役，为党中央把全国革命大本营放在西北举行奠基礼", "", 0],
+  ["1935.12.17", "瓦窑堡会议，确定抗日民族统一战线策略", "", 0],
+  ["1936.10.09", "红一、红四方面军在甘肃会宁会师", "会宁会师", 1],
+  ["1936.10.22", "红一、红二方面军在将台堡会师，长征胜利结束", "将台堡会师", 1]
+];
+
+const PEOPLE = [
+  ["徐特立", 57, "中央苏区教育部副部长，长征中年龄最大者", "到陕北，后任延安自然科学院院长；1968 年逝世", ["old"]],
+  ["朱德", 48, "红军总司令", "1955 年授元帅；1976 年逝世", ["old","rank"]],
+  ["刘伯承", 42, "红军总参谋长", "1955 年授元帅；1986 年逝世", ["old","rank"]],
+  ["毛泽东", 40, "中华苏维埃共和国临时中央政府主席", "1976 年逝世", ["old"]],
+  ["周恩来", 36, "中央军委副主席，长征中负责军事指挥的最终决心", "1976 年逝世", ["old"]],
+  ["彭德怀", 36, "红三军团军团长", "1955 年授元帅；1974 年逝世", ["old","rank"]],
+  ["聂荣臻", 35, "红一军团政治委员", "1955 年授元帅；1992 年逝世", ["old","rank"]],
+  ["徐海东", 34, "红二十五军军长，先期到达陕北", "1955 年授大将；1970 年逝世", ["old","rank"]],
+  ["张闻天", 34, "遵义会议后代替博古负总责", "1976 年逝世", ["old"]],
+  ["邓小平", 30, "中央秘书长", "1997 年逝世", []],
+  ["陈云", 29, "中央政治局常委，后赴共产国际汇报", "1995 年逝世", []],
+  ["陈树湘", 29, "红三十四师师长，湘江战役中率部断后", "1934 年 12 月负伤被俘，断肠明志，牺牲", ["fell"]],
+  ["王稼祥", 28, "中央政治局候补委员，三人军事小组成员", "1974 年逝世", []],
+  ["博古（秦邦宪）", 27, "中共临时中央总负责人", "1946 年因飞机失事遇难", ["fell"]],
+  ["杨尚昆", 27, "红三军团政治委员", "1998 年逝世", []],
+  ["林彪", 27, "红一军团军团长", "1971 年身亡", []],
+  ["贺子珍", 24, "中央红军干部休养连，随军长征", "1984 年逝世", []],
+  ["康克清", 23, "红军总司令部直属队政治委员", "1992 年逝世", []],
+  ["杨成武", 20, "红四团政治委员，泸定桥突击队指挥者之一", "1955 年授上将；2004 年逝世", ["young","rank"]],
+  ["肖华", 18, "少共国际师政治委员，长征中最年轻的师职干部之一", "1955 年授上将；1985 年逝世", ["young","rank"]]
+];
+
+function renderTimeline(){
+  const box = document.getElementById("tlList");
+  if (!box) return;
+  box.innerHTML = TIMELINE.map(([d, t, node, big]) =>
+    '<div class="tlRow' + (big ? " big" : "") + '"><div class="tlD">' + d + '</div>'
+    + '<div class="tlT">' + t + '</div>'
+    + (node ? '<span class="tlGo" data-node="' + node + '">在地图上看这一段 →</span>' : "")
+    + '</div>').join("");
+  box.querySelectorAll(".tlGo").forEach(a => a.onclick = () => gotoNode(a.dataset.node));
+}
+
+function gotoNode(title){
+  const i = NODES.findIndex(n => n.title === title);
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.tab === "mapTab"));
+  document.querySelectorAll("section").forEach(x => x.classList.toggle("on", x.id === "mapTab"));
+  if (typeof ensureMap === "function") ensureMap();
+  window.scrollTo({ top: 0 });
+  setTimeout(() => { if (i >= 0) openPoster(i); }, 260);
+}
+
+let pFilter = "all";
+function renderPeople(){
+  const box = document.getElementById("pGrid");
+  if (!box) return;
+  box.innerHTML = PEOPLE.filter(p => pFilter === "all" || p[4].indexOf(pFilter) >= 0).map(p =>
+    '<div class="pCard"><b>' + p[0] + '<span class="age">' + p[1] + ' 岁</span></b>'
+    + '<p>' + p[2] + '</p><div class="fate">' + p[3] + '</div></div>').join("");
+}
+
+/* 兵力曲线 */
+function drawForceChart(){
+  const cv = document.getElementById("chForce");
+  if (!cv) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const W = 640, H = 300;
+  cv.width = W * dpr; cv.height = H * dpr;
+  cv.style.height = (H * (cv.clientWidth || 320) / W) + "px";
+  const g = cv.getContext("2d");
+  g.scale(dpr, dpr);
+  g.clearRect(0, 0, W, H);
+  const pts = [["1934.10", 8.6], ["1934.12", 3.1], ["1935.01", 3.0], ["1935.09", 0.8], ["1935.10", 0.7]];
+  const L = 62, R = W - 22, T = 40, B = H - 46;
+  g.strokeStyle = "#e6d8bf"; g.lineWidth = 1;
+  for (let i = 0; i <= 4; i++) {
+    const y = T + (B - T) * i / 4;
+    g.beginPath(); g.moveTo(L, y); g.lineTo(R, y); g.stroke();
+    g.fillStyle = "#a2896a"; g.font = "11px sans-serif"; g.textAlign = "right";
+    g.fillText((9 - i * 2.25).toFixed(1) + " 万", L - 8, y + 4);
+  }
+  const X = i => L + (R - L) * i / (pts.length - 1);
+  const Y = v => B - (B - T) * (v / 9.6);
+  g.beginPath();
+  pts.forEach((p, i) => i ? g.lineTo(X(i), Y(p[1])) : g.moveTo(X(i), Y(p[1])));
+  g.strokeStyle = "#a3241c"; g.lineWidth = 2.2; g.stroke();
+  const grad = g.createLinearGradient(0, T, 0, B);
+  grad.addColorStop(0, "rgba(163,36,28,.22)"); grad.addColorStop(1, "rgba(163,36,28,0)");
+  g.lineTo(X(pts.length - 1), B); g.lineTo(X(0), B); g.closePath(); g.fillStyle = grad; g.fill();
+  pts.forEach((p, i) => {
+    g.beginPath(); g.arc(X(i), Y(p[1]), 3.4, 0, 7); g.fillStyle = "#a3241c"; g.fill();
+    g.fillStyle = "#5b4f48"; g.font = "11px sans-serif"; g.textAlign = "center";
+    g.fillText(p[0], X(i), B + 18);
+    g.fillStyle = "#a3241c"; g.font = "11.5px sans-serif";
+    const dy = (i === 0) ? 16 : -9;
+    g.fillText(p[1] + " 万", X(i), Y(p[1]) + dy);
+  });
+}
+
+/* 四支队伍路线 */
+function drawRoutesChart(){
+  const cv = document.getElementById("chRoutes");
+  if (!cv) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const W = 640, H = 480;
+  cv.width = W * dpr; cv.height = H * dpr;
+  cv.style.height = (H * (cv.clientWidth || 320) / W) + "px";
+  const g = cv.getContext("2d");
+  g.scale(dpr, dpr);
+  g.clearRect(0, 0, W, H);
+  const LON0 = 96, LON1 = 122, LAT0 = 24, LAT1 = 42;
+  const px = lon => (lon - LON0) / (LON1 - LON0) * (W - 20) + 10;
+  const py = lat => (LAT1 - lat) / (LAT1 - LAT0) * (H - 20) + 10;
+
+  const overlays = () => {
+    g.fillStyle = "rgba(253,248,238,.30)"; g.fillRect(0, 0, W, H);
+    const routes = [
+      { c: "rgba(140,26,20,.95)", w: 2.6, pts: [[115.41,25.95],[113.0,25.6],[110.67,25.61],[109.78,26.16],[109.14,26.23],[107.98,26.58],[106.93,27.70],[105.9,28.42],[105.4,28.1],[106.4,27.85],[105.2,28.2],[103.6,28.4],[102.4,26.6],[102.25,26.65],[102.25,29.15],[102.23,29.91],[102.5,30.9],[102.36,30.99],[103.0,32.6],[103.6,34.1],[104.4,34.4],[105.7,35.4],[108.18,36.93]] },
+      { c: "rgba(201,130,46,.95)", w: 2.2, pts: [[114.53,31.98],[113.6,32.4],[112.4,33.0],[111.0,33.6],[109.6,33.9],[108.9,34.1],[109.83,36.87]] },
+      { c: "rgba(63,107,138,.95)", w: 2.2, pts: [[105.95,31.73],[104.6,32.2],[103.6,32.4],[102.36,30.99],[102.6,32.2],[105.05,35.7]] },
+      { c: "rgba(95,125,58,.95)", w: 2.2, pts: [[110.16,29.4],[109.5,27.9],[107.5,27.0],[105.9,25.6],[104.3,25.4],[101.5,25.6],[99.99,31.62],[102.9,34.0],[105.7,35.7]] }
+    ];
+    routes.forEach(r => {
+      g.beginPath();
+      r.pts.forEach((p, i) => i ? g.lineTo(px(p[0]), py(p[1])) : g.moveTo(px(p[0]), py(p[1])));
+      g.strokeStyle = "rgba(255,255,255,.6)"; g.lineWidth = r.w + 1.8; g.lineJoin = "round"; g.stroke();
+      g.strokeStyle = r.c; g.lineWidth = r.w; g.stroke();
+    });
+    const labels = [["于都", 115.41, 25.95, 1], ["湘江", 110.67, 25.61, -1], ["遵义", 106.93, 27.70, 1],
+                    ["金沙江", 102.4, 26.6, -1], ["泸定桥", 102.23, 29.91, 1], ["草地", 103.0, 32.6, -1],
+                    ["腊子口", 103.6, 34.1, 1], ["吴起镇", 108.18, 36.93, 1], ["会宁", 105.05, 35.7, -1],
+                    ["永坪", 109.83, 36.87, 1], ["桑植", 110.16, 29.4, 1], ["苍溪", 105.95, 31.73, -1]];
+    labels.forEach(([t, lon, lat, sgn]) => {
+      const x = px(lon), y = py(lat);
+      g.beginPath(); g.arc(x, y, 2.2, 0, 7); g.fillStyle = "rgba(60,45,35,.75)"; g.fill();
+      g.fillStyle = "#3f342c"; g.font = "11px serif";
+      g.textAlign = sgn > 0 ? "left" : "right";
+      g.fillText(t, x + sgn * 5, y + 4);
+    });
+    g.fillStyle = "rgba(120,105,88,.95)"; g.font = "10.5px sans-serif"; g.textAlign = "left";
+    g.fillText("示意：按主要行军节点连线，非精确路线", 12, H - 8);
+  };
+
+  const img = new Image();
+  let done = false;
+  const plain = () => { if (done) return; done = true; g.fillStyle = "#fdf8ee"; g.fillRect(0, 0, W, H); overlays(); };
+  img.onload = () => {
+    if (done) return;
+    try {
+      const BB = (typeof RELIEF_BB !== "undefined") ? RELIEF_BB : { lonL: 67.5, lonR: 140.625, latT: 55.7766, latB: 11.1784 };
+      const iw = img.width, ih = img.height;
+      const sx = (LON0 - BB.lonL) / (BB.lonR - BB.lonL) * iw;
+      const sy = (BB.latT - LAT1) / (BB.latT - BB.latB) * ih;
+      const sw = (LON1 - LON0) / (BB.lonR - BB.lonL) * iw;
+      const sh = (LAT1 - LAT0) / (BB.latT - BB.latB) * ih;
+      done = true;
+      g.drawImage(img, sx, sy, sw, sh, 0, 0, W, H);
+      overlays();
+    } catch (e) { plain(); }
+  };
+  img.onerror = plain;
+  img.src = (typeof RELIEF_SRC !== "undefined") ? RELIEF_SRC : "";
+  setTimeout(plain, 900);
+}
+
+/* 子页签 */
+document.querySelectorAll(".subNav button").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".subNav button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll(".archPanel").forEach(p => p.classList.toggle("on", p.id === b.dataset.sub));
+  if (b.dataset.sub === "dataPanel") { drawForceChart(); drawRoutesChart(); }
+});
+document.querySelectorAll("#pFilters button").forEach(b => b.onclick = () => {
+  pFilter = b.dataset.f;
+  document.querySelectorAll("#pFilters button").forEach(x => x.classList.toggle("on", x === b));
+  renderPeople();
+});
+
+renderChoice();
+renderTimeline();
+renderPeople();
+window.__arch = { drawForceChart, drawRoutesChart };
 
 renderQuotes();
 /* 浮窗在文档末尾，绑定要等 DOM 都到齐 */

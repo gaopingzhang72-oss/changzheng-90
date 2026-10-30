@@ -31,6 +31,62 @@
   #boot .bTxt{margin:0;font-size:12px;color:#a08a76;letter-spacing:1.6px}
   #boot .bDots:after{content:"";animation:bootDots 1.4s steps(4,end) infinite}
   @keyframes bootDots{0%{content:""}25%{content:"·"}50%{content:"··"}75%{content:"···"}}
+
+  /* ---------- 横幅 ---------- */
+  .secBand{position:relative;height:112px;margin:0 0 16px;overflow:hidden;border-radius:0 0 14px 14px;
+    -webkit-mask-image:linear-gradient(180deg,#000 58%,rgba(0,0,0,.25) 88%,transparent 100%);
+    mask-image:linear-gradient(180deg,#000 58%,rgba(0,0,0,.25) 88%,transparent 100%)}
+  .secBand.tall{height:150px;margin-bottom:8px}
+  .secBand i{position:absolute;inset:-3% -2%;background-position:center;background-size:cover;
+    background-repeat:no-repeat;transform:scale(1);animation:kbSlow 28s ease-in-out infinite alternate}
+  @keyframes kbSlow{from{transform:scale(1) translateY(0)}to{transform:scale(1.075) translateY(-1.2%)}}
+  .bandVeil{position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,rgba(38,14,10,.42),rgba(38,14,10,0) 46%,rgba(38,14,10,.26))}
+  .endPic{margin:18px 0 6px}
+  .endPic figcaption{font-size:11.5px;color:#8a7a68;text-align:center;letter-spacing:.3px}
+
+  /* ---------- 视口渐显 ---------- */
+  .rv{opacity:0;transform:translateY(15px);
+      transition:opacity .58s cubic-bezier(.22,.8,.24,1),transform .58s cubic-bezier(.22,.8,.24,1)}
+  .rv.in{opacity:1;transform:translateY(0)}
+
+  /* ---------- 页面切换 ---------- */
+  section.on{animation:secIn .46s cubic-bezier(.22,.8,.24,1) both}
+  @keyframes secIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ---------- 导航滑动条 ---------- */
+  nav{position:relative}
+  #navInk{position:absolute;left:0;bottom:0;height:2.5px;width:0;border-radius:2px;
+    background:linear-gradient(90deg,#e8c76a,#C9A227);box-shadow:0 0 6px rgba(201,162,39,.45);
+    transition:transform .34s cubic-bezier(.22,.8,.24,1),width .34s cubic-bezier(.22,.8,.24,1);
+    pointer-events:none;opacity:.95}
+
+  /* ---------- 图表从左揭开 ---------- */
+  #chForce,#chRoutes{clip-path:inset(0 100% 0 0);
+    transition:clip-path 1.25s cubic-bezier(.25,.75,.3,1)}
+  #chForce.in,#chRoutes.in{clip-path:inset(0 0 0 0)}
+
+  /* ---------- 时间轴竖线生长 ---------- */
+  .tl:before{transform-origin:top;transform:scaleY(0);
+    transition:transform 1.15s cubic-bezier(.25,.75,.3,1)}
+  .tl.in:before{transform:scaleY(1)}
+
+  /* ---------- 地图节点弹出 ---------- */
+  @keyframes nodePop{from{opacity:0}to{opacity:1}}
+  #nodeG .nodeHalo,#nodeG .nodeDot,#nodeG .nodeHit{animation:nodePop .5s ease-out both}
+  @keyframes haloBreath{0%,100%{opacity:.10}50%{opacity:.20}}
+  #nodeG .nodeHalo{animation:haloBreath 4.6s ease-in-out infinite}
+
+  /* ---------- 按钮手感 ---------- */
+  #ctrl button,.zbtn,.subNav button,nav button,.cOpt,.cNext{transition:transform .16s ease,background .2s ease,color .2s ease}
+  #ctrl button:active,.zbtn:active,.cOpt:active{transform:scale(.95)}
+
+  @media (prefers-reduced-motion: reduce){
+    .secBand i,section.on,#nodeG .nodeHalo{animation:none!important}
+    .rv{opacity:1!important;transform:none!important}
+    #chForce,#chRoutes{clip-path:none!important}
+    .tl:before{transform:none!important}
+  }
 </style>
 <style>
   :root{
@@ -705,6 +761,7 @@ window.addEventListener("load", function(){
   <button data-tab="choiceTab">抉择</button>
   <button data-tab="archTab">档案</button>
   <button data-tab="spiritTab">精神</button>
+  <span id="navInk"></span>
 </nav>
 
 <!-- ================= 地图 ================= -->
@@ -780,7 +837,8 @@ window.addEventListener("load", function(){
 
 <!-- ================= 问答 ================= -->
 <section id="quizTab">
-  <main class="inner">
+  <div class="secBand" data-b="20"><i style="background-image:url('插画/20.jpg')"></i><span class="bandVeil"></span></div>
+    <main class="inner">
     <div class="qbar"><span id="qIndex"></span><span id="qRight"></span></div>
     <div class="prog"><i id="progBar"></i></div>
     <div class="qtext" id="qText"></div>
@@ -822,7 +880,8 @@ window.addEventListener("load", function(){
 
 <!-- ================= 精神 ================= -->
 <section id="choiceTab">
-  <main class="inner">
+  <div class="secBand" data-b="21"><i style="background-image:url('插画/21.jpg')"></i><span class="bandVeil"></span></div>
+    <main class="inner">
     <div class="cIntro">
       身临其境：每一个判断，都决定着红军的命运。
     </div>
@@ -832,7 +891,8 @@ window.addEventListener("load", function(){
 </section>
 
 <section id="archTab">
-  <main class="inner">
+  <div class="secBand" data-b="23"><i style="background-image:url('插画/23.jpg')"></i><span class="bandVeil"></span></div>
+    <main class="inner">
     <div class="subNav">
       <button class="on" data-sub="tlPanel">时间轴</button>
       <button data-sub="meetPanel">会议</button>
@@ -846,7 +906,8 @@ window.addEventListener("load", function(){
     </div>
 
     <div class="archPanel" id="meetPanel">
-      <div id="meetList"></div>
+      <div class="secBand" data-b="24"><i style="background-image:url('插画/24.jpg')"></i><span class="bandVeil"></span></div>
+        <div id="meetList"></div>
     </div>
 
     <div class="archPanel" id="dataPanel">
@@ -881,7 +942,8 @@ window.addEventListener("load", function(){
     </div>
 
     <div class="archPanel" id="linkPanel">
-      <div id="linkList"></div>
+      <div class="secBand" data-b="25"><i style="background-image:url('插画/25.jpg')"></i><span class="bandVeil"></span></div>
+        <div id="linkList"></div>
       <h3 class="archH3">主要参考文献</h3>
       <div id="bookList"></div>
     </div>
@@ -889,7 +951,8 @@ window.addEventListener("load", function(){
 </section>
 
 <section id="spiritTab">
-  <main class="inner">
+  <div class="secBand" data-b="22"><i style="background-image:url('插画/22.jpg')"></i><span class="bandVeil"></span></div>
+    <main class="inner">
     <div class="spLead">
       <p>长征是历史纪录上的第一次，长征是宣言书，长征是宣传队，长征是播种机。</p>
       <small>毛泽东《论反对日本帝国主义的策略》，1935 年 12 月</small>
@@ -982,6 +1045,11 @@ window.addEventListener("load", function(){
       </p>
     </div>
 
+    <figure class="endPic">
+      <div class="secBand tall" data-b="26"><i style="background-image:url('插画/26.jpg')"></i><span class="bandVeil"></span></div>
+      <figcaption>1936 年 10 月，甘肃会宁、宁夏将台堡，三大主力会师，长征胜利结束。</figcaption>
+    </figure>
+
     <div class="note">
       <b>作品说明</b><br>
       本页是《中国近现代史纲要》思政实践作业，主题一「纪念红军长征胜利 90 周年」，形式为电子程序。
@@ -1005,7 +1073,7 @@ window.addEventListener("load", function(){
       节点坐标取县城级近似，只用于示意行军走向，不是精确测绘。<br><br>
 
       <b>三、关于 AI</b><br>
-      地图、交互、题库排版和页面代码是借助 AI 工具完成的；二十幅插画（封面一幅、事件十九幅）由 AI 生成，
+      地图、交互、题库排版和页面代码是借助 AI 工具完成的；二十幅插画（封面一幅、事件十九幅）与七幅栏目横幅由 AI 生成，
       但画面内容是按史料逐段指定的，比如四渡赤水要画三个大弯的河与红壤山谷、泸定桥要画桥板大半缺失的铁索、
       翻雪山一张要求所有人背对镜头不露脸。史实、日期、兵力数字、语录和出处均由本人核对公开史料后确定，
       没有一条是编的。<br><br>
@@ -2993,5 +3061,100 @@ if (window.requestIdleCallback) {
     <p class="qpBg" id="qpBg"></p>
   </div>
 </div>
+
+<script>
+(function(){
+  const RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* 1. 视口渐显：同一批元素依次错开出现 */
+  const targets = () => document.querySelectorAll(
+    ".tlRow,.mtCard,.lkCard,.bkRow,.pCard,.chartBox,.sp,.sp .nums>div,.qItem,.quoteWall>*,.note,.endPic,.cAfter,.archPanel .secBand");
+  function armReveal(){
+    if (RM) return;
+    targets().forEach(el => {
+      if (el.classList.contains("rv") || el.classList.contains("in")) return;
+      el.classList.add("rv");
+    });
+  }
+  const io = new IntersectionObserver(entries => {
+    const hit = entries.filter(e => e.isIntersecting);
+    hit.forEach((e, k) => {
+      const el = e.target;
+      el.style.transitionDelay = Math.min(k * 55, 280) + "ms";
+      el.classList.add("in");
+      io.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+
+  function watch(){
+    armReveal();
+    targets().forEach(el => { if (el.classList.contains("rv") && !el.classList.contains("in")) io.observe(el); });
+    armVisuals();
+  }
+  /* 图表/时间轴：只要进视口就揭开（不依赖观察器的初次回调） */
+  function armVisuals(){
+    if (RM) return;
+    /* 渐显兜底：当前视口内的元素直接显示，不等观察器 */
+    document.querySelectorAll(".rv:not(.in)").forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.05 && r.bottom > -60) el.classList.add("in");
+    });
+    document.querySelectorAll("#chForce,#chRoutes,.tl").forEach(el => {
+      if (el.classList.contains("in")) return;
+      const r = el.getBoundingClientRect();
+      if (r.width > 0 && r.height > 0 && r.top < window.innerHeight && r.bottom > 0) el.classList.add("in");
+    });
+  }
+  window.addEventListener("scroll", () => {
+    if (window.__avT) return;
+    window.__avT = setTimeout(() => { window.__avT = null; armVisuals(); }, 120);
+  }, { passive: true });
+
+  /* 2. 导航滑动条 */
+  const ink = document.getElementById("navInk");
+  function moveInk(){
+    const on = document.querySelector("nav button.on");
+    if (!on || !ink) return;
+    ink.style.width = on.offsetWidth * 0.52 + "px";
+    ink.style.transform = "translateX(" + (on.offsetLeft + on.offsetWidth * 0.24) + "px)";
+  }
+  document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => setTimeout(moveInk, 10)));
+
+  /* 3. 地图：第一次进地图时自动走一遍 */
+  let autoplayed = false;
+  function autoMarch(){
+    if (autoplayed || RM) return;
+    autoplayed = true;
+    try {
+      if (typeof curT !== "undefined" && curT < 1 && typeof setT === "function") {
+        setT(0);
+        if (typeof setPlaying === "function") setPlaying(true);
+      }
+    } catch(e){}
+  }
+
+  /* 4. 面板切换时重新排布渐显 */
+  document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => {
+    setTimeout(() => { watch(); moveInk(); armVisuals(); if (b.dataset.tab === "mapTab") setTimeout(autoMarch, 260); }, 60);
+    setTimeout(armVisuals, 420);
+  }));
+  document.querySelectorAll(".subNav button").forEach(b => b.addEventListener("click", () => {
+    setTimeout(function(){ watch(); armVisuals(); }, 60);
+    setTimeout(armVisuals, 400);
+  }));
+
+  /* 硬兜底：1.4 秒后再扫一次，6 秒后全部显示，宁可少一次动画也不留看不见的内容 */
+  const avTimer = setInterval(function(){ armVisuals();
+    if (!document.querySelector(".rv:not(.in)")) clearInterval(avTimer); }, 1400);
+  setTimeout(function(){ document.querySelectorAll(".rv").forEach(el => el.classList.add("in")); }, 6000);
+
+  window.addEventListener("load", function(){
+    setTimeout(function(){ watch(); moveInk(); }, 240);
+    setTimeout(armVisuals, 900);
+    setTimeout(autoMarch, 1200);
+  });
+  window.addEventListener("resize", moveInk);
+})();
+</script>
 </body>
 </html>

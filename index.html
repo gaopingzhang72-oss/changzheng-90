@@ -33,11 +33,12 @@
   @keyframes bootDots{0%{content:""}25%{content:"·"}50%{content:"··"}75%{content:"···"}}
 
   /* ---------- 横幅 ---------- */
-  .secBand{position:relative;height:112px;margin:0 0 16px;overflow:hidden;border-radius:0 0 14px 14px;
-    -webkit-mask-image:linear-gradient(180deg,#000 58%,rgba(0,0,0,.25) 88%,transparent 100%);
-    mask-image:linear-gradient(180deg,#000 58%,rgba(0,0,0,.25) 88%,transparent 100%)}
-  .secBand.tall{height:150px;margin-bottom:8px}
-  .secBand i{position:absolute;inset:-3% -2%;background-position:center;background-size:cover;
+  .secBand{position:relative;height:clamp(104px,17vw,232px);margin:0 0 16px;overflow:hidden;
+    border-radius:0 0 14px 14px;
+    -webkit-mask-image:linear-gradient(180deg,#000 72%,rgba(0,0,0,.35) 92%,transparent 100%);
+    mask-image:linear-gradient(180deg,#000 72%,rgba(0,0,0,.35) 92%,transparent 100%)}
+  .secBand.tall{height:clamp(150px,26vw,320px);margin-bottom:8px}
+  .secBand i{position:absolute;inset:-3% -2%;background-position:center 44%;background-size:cover;
     background-repeat:no-repeat;transform:scale(1);animation:kbSlow 28s ease-in-out infinite alternate}
   @keyframes kbSlow{from{transform:scale(1) translateY(0)}to{transform:scale(1.075) translateY(-1.2%)}}
   .bandVeil{position:absolute;inset:0;pointer-events:none;
@@ -82,6 +83,11 @@
   /* ---------- 按钮手感 ---------- */
   #ctrl button,.zbtn,.subNav button,nav button,.cOpt,.cNext{transition:transform .16s ease,background .2s ease,color .2s ease}
   #ctrl button:active,.zbtn:active,.cOpt:active{transform:scale(.95)}
+
+  @media (max-width:520px){
+    .secBand{height:118px}
+    .secBand.tall{height:158px}
+  }
 
   @media (prefers-reduced-motion: reduce){
     .secBand i,section.on,#nodeG .nodeHalo{animation:none!important}

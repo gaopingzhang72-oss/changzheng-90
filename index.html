@@ -51,8 +51,10 @@
   .rv.in{opacity:1;transform:translateY(0)}
 
   /* ---------- 页面切换 ---------- */
-  section.on{animation:secIn .46s cubic-bezier(.22,.8,.24,1) both}
-  @keyframes secIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  /* 只做透明度淡入：给 section 加 transform 会让内部 position:fixed 的元素
+     （节点卡 #card、海报浮层 #posterMask）改以 section 为包含块，跑到页面底部去 */
+  section.on{animation:secIn .42s ease-out}
+  @keyframes secIn{from{opacity:.001}to{opacity:1}}
 
   /* ---------- 导航滑动条 ---------- */
   nav{position:relative}
